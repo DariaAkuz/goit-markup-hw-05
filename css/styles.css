@@ -546,7 +546,7 @@ img {
     background-color: var(--second-bg-color);
     cursor: pointer;
 
-    transition: background-color var(--tra), color var(--tra), box-shadow var(--tra), border var(--tra);
+    transition: background-color var(--tra), color var(--tra), box-shadow var(--tra), border-color var(--tra);
 }
 
 .portfolio-btn:hover,
@@ -636,7 +636,7 @@ img {
     width: 408px;
     min-height: 584px;
     border-radius: 4px;
-    padding: 24px;
+    /* padding: 24px; */
 
     background-color: var(--modal-bg-color);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -649,34 +649,46 @@ img {
 
 
 .modal-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
     width: 24px;
     height: 24px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
-    margin-left: auto;
+    /* margin-left: auto; */
+    padding: 0;
     display: flex;
     align-items: center;
-    justify-items: center;
+    justify-content: center;
 
     background-color: var(--modalbtn-bg-color);
     color: var(--second-text-color);
+    cursor: pointer;
 
-    transition: background-color var(--tra), color var(--tra);
+    transition: background-color var(--tra), border var(--tra);
 
 }
 
 .modal-close-icon {
     fill: currentColor;
+    transition: fill var(--tra);
 }
 
 .modal-close-btn:hover,
 .modal-close-btn:focus {
     background-color: var(--hover-bg-color);
-    color: var(--fist-text-color);
+    border: none;
 }
 
+.modal-close-btn:hover .modal-close-icon,
+.modal-close-btn:focus .modal-close-icon {
+    fill: var(--fist-text-color);
+}
+
+
 .is-hidden {
-    visibility: none;
+    visibility: hidden;
     opacity: 0;
     pointer-events: none;
 }
